@@ -2,7 +2,6 @@
 // Given a number of miles ran, and a time in "MM:SS" (minutes:seconds) it took to run those miles, return a string for the average time it took to run each mile in the format "MM:SS".
 
 // Add leading zeros when needed.
-
 function milePace(miles, duration) {
   console.log(miles, duration);
   // divide duration by miles
@@ -16,8 +15,8 @@ function milePace(miles, duration) {
   console.log(seconds);
   let div = seconds / miles;
   console.log(div / 60);
-  let minResult = div / 60;
-  let secResult = (div / 60) % 60 === 0;
+  let minResult = Math.floor(div / 60);
+  let secResult = Math.floor(div % 60);
   console.log(minResult, secResult);
   //return miles;
   return `${minResult < 10 ? '0' + minResult : minResult}:${
